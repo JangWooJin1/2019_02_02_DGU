@@ -1,0 +1,50 @@
+V(p.body, typing(p.decpart)) > 선언정보와 그것에 대한 정보를 함께 넘겨줌
+
+typeOf (1) > 바로 int를 가져와줌
+typeOf(x) > 이건 {<x,int>, <y,float>}을 확인하고 > int를 반환해줌
+typeOf(x+y) > 이건 위에 테이블과 binary객체를 이용해서 x가 int면 int / float이면 float를 반환
+
+
+type의 rule
+1.모든 참조되는 변수들은 반드시 정의가 되있어야한다.
+> typing함수를 이용해서 함
+	for(Declaration di : d) > d에 있는 원소들을 하나씩 꺼내서 반복함
+
+
+2. 선언된 변수가 unique한 이름을 사용해야한다
+> V 함수를 이용해서 함 n-1까지 하나하나 다 비교하면 됨
+
+3. program이 유효해야함 > Declarations가 유효해야하고 Block body가 type map(선언된 변수들의 정보)에 기반하여 유효해야함
+
+
+4. statement가 유효해야함 > 
+	skip > 아무일도 안함(그냥 ;)
+	assignment > (target=source) > target이 정의가 되어있어야함 + source가 유효해야함
+		>만약 typeOf를 했는데 target이 float면, source는 반드시 int값과 float
+		>만약 typeOf를 했는데 target이 int면 , source는 반드시 int와 char 
+		> 나머지는 target과 source의 타입이 동일해야함
+  	conditional
+	Loop
+	Block 검사 > block에 들어가있는 statement가 모두 유효하면 block도 유효함
+
+5. Expression이 유효해야함
+	> value는 이미 syntax분석을 할 때 분석이 끝남 > 항상 유효
+	> variable > type map에 들어가 있으면 유효하다
+	> binary 검증
+		arithmetic이면 int는 int끼리 float은 float끼리 계산
+		relational이면 무조건 같은 타입
+
+
+6. Expression type검사
+	> value, variable은 그냥 타입 리턴해주면 됨
+	> binary 타입
+		artimetic > int끼리의 계산이면 binary타입은 int
+		relational > binary타입은 bool
+
+//여기까지가 과제 설명 + 추가 구현 error 여러개 검사할 수 있도록 하기!
+
+때쓰면 안됨
+
+clite는 widening conversion(묵시적 형변환)이 가능 float에 int값 넣기
+
+

@@ -1,0 +1,53 @@
+Begin parsing... programs/fib.cpp
+Program (abstract syntax):
+  globals:  {}
+  Functions:
+    Function = fibonacci; Return type = int
+    params = {<n,int>}
+    locals = {<fib0,int>, <fib1,int>, <temp,int>, <k,int>}
+      Block:
+        Assignment:
+          Variable: fib0
+          IntValue: 0
+        Assignment:
+          Variable: fib1
+          IntValue: 1
+        Assignment:
+          Variable: k
+          Variable: n
+        Loop:
+          Binary:
+            Operator: INT>
+            Variable: k
+            IntValue: 0
+          Block:
+            Assignment:
+              Variable: temp
+              Variable: fib0
+            Assignment:
+              Variable: fib0
+              Variable: fib1
+            Assignment:
+              Variable: fib1
+              Binary:
+                Operator: INT+
+                Variable: fib0
+                Variable: temp
+            Assignment:
+              Variable: k
+              Binary:
+                Operator: INT-
+                Variable: k
+                IntValue: 1
+        Return : 
+          Variable: fibonacci
+          Variable: fib0
+    Function = main; Return type = int
+    params = {}
+    locals = {<answer,int>}
+      Block:
+        Assignment:
+          Variable: answer
+          Call: fibonacci
+            args = 
+              IntValue: 8

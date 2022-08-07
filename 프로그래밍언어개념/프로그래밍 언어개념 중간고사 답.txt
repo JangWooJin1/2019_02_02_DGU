@@ -1,0 +1,38 @@
+1 o
+2 o
+3 x
+4 o 
+5 o
+6 o 틀렷네
+7 o
+8 x
+9 o
+10 o
+
+
+1 귀납법
+2 abstart syntax
+3 imperative
+4 프로그래밍 언어
+5 ?
+6 semantics
+
+1. 원래 있던것에서 새로운 것을 도출해나간다는 점에 있어서 비슷함
+2. 구문 분석에 필요 없는것들(seperator, punctaion)
+3. 
+4.
+5. 
+
+
+binding
+
+5 error
+
+
+type check
+1st	symbol table에서 a = x+y에서 각각 개체들이 존재하는가 확인
+2nd 	type system검사(유효한 operation인지 확인)
+
+output은 AST
+
+그 다음 과정은 execuation semantics 후 결과를 출력 ( 인터프리터는 여기서 실행 )

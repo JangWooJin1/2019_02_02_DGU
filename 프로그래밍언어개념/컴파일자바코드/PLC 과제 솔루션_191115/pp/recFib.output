@@ -1,0 +1,41 @@
+Begin parsing... programs/recfib.cpp
+Program (abstract syntax):
+  globals:  {}
+  Functions:
+    Function = fibonacci; Return type = int
+    params = {<n,int>}
+    locals = {}
+      Block:
+        Conditional:
+          Binary:
+            Operator: INT<
+            Variable: n
+            IntValue: 2
+          Return : 
+            Variable: fibonacci
+            Variable: n
+          Return : 
+            Variable: fibonacci
+            Binary:
+              Operator: INT+
+              Call: fibonacci
+                args = 
+                  Binary:
+                    Operator: -
+                    Variable: n
+                    IntValue: 1
+              Call: fibonacci
+                args = 
+                  Binary:
+                    Operator: -
+                    Variable: n
+                    IntValue: 2
+    Function = main; Return type = int
+    params = {}
+    locals = {<answer,int>}
+      Block:
+        Assignment:
+          Variable: answer
+          Call: fibonacci
+            args = 
+              IntValue: 8

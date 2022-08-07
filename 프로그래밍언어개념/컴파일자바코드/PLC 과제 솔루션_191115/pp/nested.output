@@ -1,0 +1,34 @@
+Begin parsing... programs/nested.cpp
+Program (abstract syntax):
+  globals:  {}
+  Functions:
+    Function = main; Return type = int
+    params = {}
+    locals = {<a,float>, <b,float>, <c,float>, <d,float>}
+      Block:
+        Assignment:
+          Variable: a
+          FloatValue: 5.0
+        Assignment:
+          Variable: b
+          FloatValue: 4.5
+        Assignment:
+          Variable: c
+          FloatValue: 3.3
+        Assignment:
+          Variable: d
+          FloatValue: 2.2
+        Assignment:
+          Variable: a
+          Binary:
+            Operator: FLOAT+
+            Binary:
+              Operator: FLOAT*
+              Variable: b
+              Unary:
+                Operator: I2F
+                IntValue: 1
+            Binary:
+              Operator: -
+              Variable: c
+              Variable: d

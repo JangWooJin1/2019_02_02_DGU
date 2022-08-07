@@ -1,0 +1,22 @@
+교수 추천 스칼라 언어(객체지향 + 함수형 언어)
+
+
+일단 먼저 syntax과 type 체크가 유효해야지 하는 검사
+why? > 같은 프로그램인데 다른 머신에서 다른 결과가 나온 사례가 있음
+
+1st Operational semantics 2nd Axiomatic 3rd Denotational > 여기서 operational sematics를 중점적으로 진도 나감
+
+
+Environment(메모리 주소 정보를 저장하는 곳) + State(해당 변수가 가지게 되는 값 정보를 저장하는 곳)
+>이 2가지를 합쳐서 포현하는 것을 Simple state
+
+State Transformations 정의(질문2)
+   1) denotational semantics 정의: State Transformation 함수들의 집합
+   2) semantic domain : Value의 속성과 operations관한 정보들 > 의미분석을 할 범위를 이것으로 결정
+
+  ex) 의미 없는 프로그램 > for(i=1; i > -1 ; i++) > 무한루프가 됨 > 1-0-1-0... > 이런 프로그램에는 한계가 있음
+  expression의 의미 > statements의 의미 > program
+
+
+c++Lite
+  

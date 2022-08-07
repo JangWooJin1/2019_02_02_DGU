@@ -1,0 +1,84 @@
+#include<iostream>
+
+
+class Node {
+private:
+	
+public:
+	Node(int data, Node *next) : data(data), next(next){}
+	int data;
+	Node* next;
+};
+
+Node* newList(Node* root1, Node* root2) {
+	Node* NewList = NULL;
+	Node* NewListNext=NULL;
+	Node* temp1 = root1;
+	Node* temp2 = root2;
+
+	while (temp1 != NULL) {
+
+		Node* NodeNew; //새로운 리스트 노드 추가
+		if (temp1->data > temp2->data) {
+			NodeNew = new Node(temp1->data, NULL);
+		}
+		else {
+			NodeNew = new Node(temp2->data, NULL);
+		}
+
+
+		if (NewList == NULL) { //새로운 리스트 노드 연결
+			NewList = NodeNew;
+			NewListNext = NodeNew;
+		}
+		else {
+			NewListNext->next = NodeNew;
+			NewListNext = NewListNext->next;
+		}
+
+
+		temp1 = temp1->next; //기존 노드 이동
+		temp2 = temp2->next;
+	}
+	return NewList; //새로운 리스트 헤드 리턴해주기
+}
+
+
+
+int main() {
+	Node* root1=NULL;
+	for (int i = 1; i <= 4; i++) {
+		Node* NodeNew = new Node(i, root1);
+		root1 = NodeNew;
+	}
+
+	Node* root2 = NULL;
+	for (int i = 5; i >= 2; i--) {
+		Node* NodeNew = new Node(i, root2);
+		root2 = NodeNew;
+	}
+
+	
+	Node *root3 = newList(root1, root2);
+
+	Node* temp1 = root1;
+	Node* temp2 = root2;
+	Node* temp3 = root3;
+	std::cout << "List1: ";
+	while (temp1 != NULL) {
+		std::cout << temp1->data << "  ";
+		temp1 = temp1->next;
+	}
+	std::cout << std::endl << "List2: ";
+	while (temp2 != NULL) {
+		std::cout << temp2->data << "  ";
+		temp2 = temp2->next;
+	}
+	std::cout << std::endl << "New: ";
+	while (temp3 != NULL) {
+		std::cout << temp3->data << "  ";
+		temp3 = temp3->next;
+	}
+	std::cout << std::endl;
+}
+

@@ -1,0 +1,24 @@
+손윤식 교수님 면접 ai, 보안, 빅데이터
+
+motivation
+1. 
+2. 컴파일 과정에서 아무문제 없이 동작이 되는것이 목표 - compiler writer
+3. standards developers - 언어를 지원하는 모든 기기에서 동일한 기능을 하게 해야함
+> 이러기 위하여 syntax과 type system, semantics가 명확하게 정의되야함 > 요즘언어들은 이 2개가 좋음
++) 최근 언어 중에 자바 스크립트는 type system이 좀 엉성함
++) semantics는 아직 조금 명확하게 정의하기가 좀 어려움
++) semantics는 syntax와 type이 올바른 프로그램만 의미 파악을 함
++) IBM에서는 semantics를 여러 하드웨어에서 프로그램을 실행시킨 결과를 의미함
++) operation semantics > 이 명령을 수행하면 어떤 결과가 있느냐를 쭉 정리한 것
+
+
+expression semantics > 가장 좋은 방식은 postfix방식
+> 검사해야하는 필수항목은 associativity 와 precedence(결합 법칙과 우선순위)
++) c와 포트란은 ==, < 같은 연산자에 왼쪽 결합법칙을 가지고 있기 때문에 a<b<c같은 방식으로 사용 불가
+>short circuit : 컴파일 과정에서 연산식을 해석하는 과정에서 발생(a&&b같은 거에서 a가 true면 그냥 b가 결과, false면 그냥 false > 이와 같이 한개만 검사하는 것)
+>이런 short circuit때문에 expression에서 연산을 하면 안됨 (ex> a>0 || b++ > 10)
+>short circuit응용( p!= null && p.info != key)
+>side effect : expression안에서 변수의 값을 바꿀때 or syntax가 명확하게 정의되지 않을 때 발생
+
+
+Program State

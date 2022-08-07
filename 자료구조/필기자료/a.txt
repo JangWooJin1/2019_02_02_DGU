@@ -1,0 +1,38 @@
+
+set : 중복x 순서x
+list : 중복O 순서O
+unsorted > 입력된 순서대로 저장
+key : 리스트끼리 중복이 없는 값 > 구별의 기준이 되는 값
+다양한 자료형을 넣을 수 있는 generic data type (ex> ItemType info)
+
+순차적 탐색 vs 이진 탐색
+
+
+
+data abstraction 3가지 logical > 
+operation의 iterators
+
+
+
+throw()함수와 typedef char형식
+동적으로 배열 할당 https://boycoding.tistory.com/205
+
+파일입출력
+
+enum
+
+10/02
+
+링크 리스트로 리스트와 스택을 구현하자
+
+링크 리스트는 메모리상의 공간만 있으면 무한대로 만들 수 있음 그래서 isfull함수는
+location에 임의의 주소를 생성해보고 안되면 true를 반환하는 식으로 진행한다.
+
+링크리스트 - 필요한만큼 메모리할당
+배열 - 크기가 정해져 있음
+
+
+postfix형태를 컴퓨터가 더 선호함(우선순위 처리같은거 때매) -> 이건 스택을 이용해서 구현
+
+doubly > 앞을 가르키는 predloc을 가지는 것
+circle > 맨뒤의 포인터를 맨앞을 가르키게 하는 것

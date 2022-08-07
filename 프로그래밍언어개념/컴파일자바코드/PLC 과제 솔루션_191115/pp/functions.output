@@ -1,0 +1,44 @@
+Begin parsing... programs/functions.cpp
+Program (abstract syntax):
+  globals:  {<h,int>, <i,int>}
+  Functions:
+    Function = A; Return type = void
+    params = {<x,int>, <y,int>}
+    locals = {<i,bool>, <j,bool>}
+      Block:
+Callstatement: B
+          args = 
+            Variable: h
+    Function = B; Return type = void
+    params = {<w,int>}
+    locals = {<j,int>, <k,int>}
+      Block:
+        Assignment:
+          Variable: i
+          Binary:
+            Operator: INT*
+            IntValue: 2
+            Variable: w
+        Assignment:
+          Variable: w
+          Binary:
+            Operator: INT+
+            Variable: w
+            IntValue: 1
+    Function = main; Return type = int
+    params = {}
+    locals = {<a,int>, <b,int>}
+      Block:
+        Assignment:
+          Variable: h
+          IntValue: 5
+        Assignment:
+          Variable: a
+          IntValue: 3
+        Assignment:
+          Variable: b
+          IntValue: 2
+Callstatement: A
+          args = 
+            Variable: a
+            Variable: b

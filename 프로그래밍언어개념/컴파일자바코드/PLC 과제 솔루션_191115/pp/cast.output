@@ -1,0 +1,18 @@
+Begin parsing... programs/cast.cpp
+Program (abstract syntax):
+  globals:  {}
+  Functions:
+    Function = main; Return type = int
+    params = {}
+    locals = {<c,int>, <b,float>}
+      Block:
+        Assignment:
+          Variable: c
+          IntValue: 1
+        Assignment:
+          Variable: b
+          Unary:
+            Operator: -
+            Unary:
+              Operator: I2F
+              Variable: c

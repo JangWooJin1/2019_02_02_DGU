@@ -1,0 +1,39 @@
+어떤 문제를 해결할 때 효율적인 접근을 위한 자료의 구조, 저장, 관리를 의미
+
+어플리케이션(유저) 레벨 -> logic(ADT) 레벨 -> implementaion 레벨
+
+array 장 : 직접적인 접근 가능 -> 구현 쉬움, 시간 복잡도가 낮음
+	단 : maxSize를 필연적으로 지정해야함 -> 1개~100개 사이즈가 같으며, 그 이상 값 저장 불가
+	핵심 : maxSize구현, 값 초기화 필요 없음
+link 장 : 유동적으로 사이즈 할당 가능
+	단 : 직접적인 접근 불가 -> 구현 어려움, 시간복잡도 증가
+	핵심 : Node 클래스 구현, null은 -> 사용 불가(예외처리), 포인터는 > 부분의 정보를 가지고 있는 것
+
+
+리스트 : 순서가 존재하는 동질의 데이터들의 집합
+	특징 : cursor를 통해 어디든지 접근 가능
+	종류 : unsorted vs sorted
+	구현 : array, link(제한된 기능), double link
+	unsorted -> 맨뒤 or 맨앞에서 값 넣기
+		array -> 지울때 맨뒤랑 값 바꾸기
+		link
+		double link
+	sorted -> 값이 들어갈 자리 찾기(insert값이 더 크면 더 찾고, 같거나 작으면 멈춤)
+		array-> 중간에 값 을 넣을 때 뒤로 땡기기
+		link -> 이전의 노드를 가르기는 pre포인터 하나 더 만들기
+		double link
+
+스택 : 리스트 + LIFO(마지막에 들어간것이 처음으로 나온다)
+	특징 : top에서만 작업 가능
+	구현 : array, link
+	array
+	link
+
+큐 : 리스트 + FIFO(처음 들어간 것이 처음으로 나온다)
+	특징 : front에서 값을 빼고, rear에서 값을 넣는다 (front와 rear에서만 값을 넣고 빼줌)
+	종류 : 선형 vs 순환
+	구현 : 선형 link, 순환 array
+	순환 array -> 값 빼줄때 빈공간 사용할려고 순환 큐로 함, front를 한칸 앞으로 해서 empty와 full의 조건을 다르게 해줌(빈공간 한개 생성)
+			(rear+1)%maxSize
+	선형 link -> 작업 앞뒤 바꾸는게 힘듬
+			 
